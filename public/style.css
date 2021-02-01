@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(240, 245, 245);
+    text-align: center;
+}
+
+.board{
+    width: 0px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    border: 25px solid rgb(41, 61, 61);
+}
+
+.block {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+}
+
+.white {
+    background-color:rgb(102, 153, 153);
+}
+
+.black{
+    background-color: rgb(204, 255, 228);
+}
+
+.piece{
+    vertical-align: middle;
+    
+}
+
