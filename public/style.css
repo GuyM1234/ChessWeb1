@@ -1,13 +1,14 @@
 body{
     background-color: rgb(240, 245, 245);
-    text-align: center;
+    margin: auto;
 }
 
 .board{
-    width: 0px;
+    width: 800px;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto;
     border: 25px solid rgb(41, 61, 61);
+    margin: auto; 
 }
 
 .block {
