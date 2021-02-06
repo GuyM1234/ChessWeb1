@@ -1,4 +1,4 @@
-import { Piece , Pawn, Rook,Bishop} from "./pieces"
+import { Piece , Pawn, Rook,Bishop, Queen} from "./pieces"
 
 
 class GameBoard {
@@ -16,8 +16,8 @@ class GameBoard {
             }
             board.push(row)
         }
-        board[6] = board[6].map((x,index) => new Pawn([6,index],'P','w',"WhitePawn.png"))
-        board[1] = board[1].map((x,index) => new Pawn([1,index],'P','b',"BlackPawn.png"))
+        board[6] = board[6].map((x,index) => new Pawn([6,index],'P','w'))
+        board[1] = board[1].map((x,index) => new Pawn([1,index],'P','b'))
         
         // board_imgs[7][4] = "WhiteKing.png"
         // board_imgs[7][3] = "WhiteQueen.png"
@@ -37,14 +37,17 @@ class GameBoard {
         // board_imgs[0][1] = "BlackKnight.png"
         // board_imgs[0][6] = "BlackKnight.png"
 
-        board[7][0] = new Rook([7,0],'R','w',"WhiteRook.png")
-        board[7][7] = new Rook([7,7],'R','w',"WhiteRook.png")
-        board[0][0] = new Rook([0,0],'R','b',"BlackRook.png")
-        board[0][7] = new Rook([0,7],'R','b',"BlackRook.png")
-        board[7][2] = new Bishop([7,2],'B','w',"WhiteBishop.png")
-        board[7][5] = new Bishop([7,5],'B','w',"WhiteBishop.png")
-        board[0][2] = new Bishop([0,2],'B','B',"BlackBishop.png")
-        board[0][5] = new Bishop([0,5],'B','B',"BlackBishop.png")
+
+        board[7][3] = new Queen([7,3],'Q','w')
+        board[0][3] = new Queen([0,3],'Q','b')
+        board[7][0] = new Rook([7,0],'R','w')
+        board[7][7] = new Rook([7,7],'R','w')
+        board[0][0] = new Rook([0,0],'R','b')
+        board[0][7] = new Rook([0,7],'R','b')
+        board[7][2] = new Bishop([7,2],'B','w')
+        board[7][5] = new Bishop([7,5],'B','w')
+        board[0][2] = new Bishop([0,2],'B','b')
+        board[0][5] = new Bishop([0,5],'B','b')
 
         return board;
     } 

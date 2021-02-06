@@ -1,11 +1,10 @@
 
 export class Piece {
-    constructor (spot,lett,color,img){
+    constructor (spot,lett,color){
         this.spot = spot
-        this.let = lett
+        this.lett = lett
         this.color = color
         this.moved = false
-        this.img = img
     }
 
     move_options () {
@@ -27,9 +26,9 @@ export class Piece {
         while (!blocked) {
             row += rowDir
             column += columnDir
-            if (!this.is_spot_free(row ,column,board,option_list)){
+            if (!this.is_spot_free(row ,column, board, option_list)){
                 blocked = true;
-                this.is_spot_eatable(row,column, columnDir,board,option_list);
+                this.is_spot_eatable(row, column, board, option_list);
             }
         }
     }
@@ -118,3 +117,21 @@ const get_opp_color= (color) => {
     }
 }
 
+export class Queen extends Piece {
+    move_options(board) {
+        let option_list = []
+        this.check_dir(1,0,board,option_list)
+        this.check_dir(-1,0,board,option_list)
+        this.check_dir(0,1,board,option_list)
+        this.check_dir(0,-1,board,option_list)
+        this.check_dir(1,1,board,option_list)
+        this.check_dir(-1,-1,board,option_list)
+        this.check_dir(-1,1,board,option_list)
+        this.check_dir(1,-1,board,option_list)
+        return option_list
+    }
+}
+
+export class King extends Piece {
+    
+}
