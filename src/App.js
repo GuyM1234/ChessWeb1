@@ -60,7 +60,8 @@ class App extends React.Component {
   render () {
     return(
       <div className="game">
-        <h1 className="status">{this.state.status}</h1>
+        {/* <h1 className="status">{this.state.status}</h1> */}
+        <h1 className="status">{window.token}</h1>
         <Board board = {this.state.game.board} move_options = {this.state.move_options} handleClick = {this.handleClick}/>
         <div className="timers">
           <Timer color = 'b' turn = {this.state.game.turn}/>
