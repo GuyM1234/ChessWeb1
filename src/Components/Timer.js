@@ -30,6 +30,10 @@ class Timer extends React.Component {
     startClock = () => {
         this.myInterval = setInterval(() => {
             this.setState(prevState => {
+                if (prevState.time === 1) {
+                    this.stopClock()
+                    return {time: prevState.time - 1, lost: true}
+                }
                 return {time: prevState.time - 1}
             })
         }, 1000)
